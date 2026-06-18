@@ -1,6 +1,7 @@
 .hero-section {
-  padding: 80px 0;
+  padding: 80px 0 0 0;
   background-color: var(--bg-color);
+  overflow: hidden;
 }
 
 .hero-container {
@@ -13,48 +14,62 @@
 .hero-content {
   flex: 1;
   max-width: 600px;
+  padding-bottom: 80px;
 }
 
 .hero-title {
-  font-size: 36px;
+  font-size: 32px;
   line-height: 1.2;
   color: var(--primary-color);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .hero-subtitle {
-  font-size: 26px;
-  line-height: 1.2;
+  font-size: 22px;
+  line-height: 1.3;
   color: var(--primary-color);
   font-weight: 500;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .hero-description {
   font-size: 18px;
   line-height: 1.4;
   color: var(--text-dark);
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 40px;
+}
+
+.hero-btn {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 26px 45px;
+  font-size: 16px;
+  display: inline-block;
 }
 
 .hero-note {
   font-size: 14px;
   color: var(--text-light);
-  margin-top: 20px;
+  margin-top: 15px;
+  font-weight: 400;
 }
 
 .hero-image {
   flex: 1;
   display: flex;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: stretch;
 }
 
 .hero-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 20px;
+  margin-bottom: -10px; /* makes her legs touch the bottom of the section */
 }
 
 @media (max-width: 992px) {
@@ -65,6 +80,7 @@
   
   .hero-content {
     max-width: 100%;
+    padding-bottom: 40px;
   }
   
   .hero-title {
@@ -72,6 +88,6 @@
   }
   
   .hero-subtitle {
-    font-size: 22px;
+    font-size: 20px;
   }
 }

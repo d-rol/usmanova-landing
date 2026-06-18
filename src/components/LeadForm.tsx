@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import './LeadForm.css';
 
-const LeadForm: React.FC = () => {
+interface LeadFormProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const LeadForm: React.FC<LeadFormProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -25,9 +30,12 @@ const LeadForm: React.FC = () => {
     }, 1500);
   };
 
+  if (!isOpen) return null;
+
   return (
-    <section className="form-section" id="form">
-      <div className="container form-container">
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content-container" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close-btn" onClick={onClose}>&times;</button>
         <div className="form-box">
           <h2 className="form-title">Начать тренировки прямо сейчас</h2>
           <p className="form-subtitle">Оставьте заявку, и мы свяжемся с вами для подбора программы</p>
@@ -79,7 +87,7 @@ const LeadForm: React.FC = () => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
