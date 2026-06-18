@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Trust from './components/Trust';
